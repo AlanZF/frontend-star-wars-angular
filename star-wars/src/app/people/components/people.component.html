@@ -1,0 +1,41 @@
+<div class="container">
+    <h2>Star Wars Characteres 
+        <span class="legend">(Click in Film's button to see the films of the charactere,
+        data taken from: <a href="https://swapi.dev/api" 
+        target="_blank">{{ link }}</a>)</span>
+    </h2>
+    <p></p>
+    <p></p>
+    <table class="table table-sm table-dark table-borderless table-hover">
+        <thead class="head table-primary">
+            <tr>
+                <th>Name</th>
+                <th>Height</th>
+                <th>Mass</th>
+                <th>Hair Color</th>
+                <th>Skin Color</th>
+                <th>Eye Color</th>
+                <th>Birth Year</th>
+                <th>Gender</th>
+                <th>Films</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr *ngFor="let person of people">
+                <td>{{ person.name }}</td>
+                <td>{{ person.height }}</td>
+                <td>{{ person.mass }}</td>
+                <td>{{ person.hair_color }}</td>
+                <td>{{ person.skin_color }}</td>
+                <td>{{ person.eye_color }}</td>
+                <td>{{ person.birth_year }}</td>
+                <td>{{ person.gender }}</td>
+                <td>
+                    <app-bootstrap-modal films="{{ person.films }}"
+                        name="{{ person.name }}"></app-bootstrap-modal>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
